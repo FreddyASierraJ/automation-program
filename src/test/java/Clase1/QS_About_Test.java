@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class QS_About_Test {
 
-    /*@Test
+    @Test
     void verifyAboutPage() {
 
         WebDriver driver = new ChromeDriver();
@@ -34,7 +34,7 @@ public class QS_About_Test {
         Assertions.assertEquals(expectedUrl,currentUrl,"Failed:Current URL is not the expected one" );
         driver.quit();
 
-    }*/
+    }
     @Test
     void verifyBottomsOptions(){
 

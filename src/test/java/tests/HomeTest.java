@@ -11,7 +11,7 @@ public class HomeTest extends BaseTest{
 
     @BeforeEach
     void initPageObjects() {
-        homePage = new HomePage(driver);
+        homePage = new HomePage();
     }
 
     @Test

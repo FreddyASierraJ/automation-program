@@ -1,5 +1,6 @@
 ### IntelliJ IDEA ###
-
+/downloads/
+/logs/
 .idea/
 .idea/modules.xml
 .idea/jarRepositories.xml
