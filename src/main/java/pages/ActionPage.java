@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -22,6 +21,7 @@ public class ActionPage extends BasePage{
 
     public String verifyKeysChord(String text){
         WebElement textArea =findElement(textArea1_Locator);
+        textArea.clear();
         textArea.sendKeys(Keys.chord(Keys.SHIFT,text));
         //hacer ejercicio de usar gettext o getdomeatribute a ver que pasa
         return textArea.getAttribute("value");
@@ -29,6 +29,7 @@ public class ActionPage extends BasePage{
 
     public String verifyActionKeyBoard(String text){
         WebElement textArea =findElement(textArea1_Locator);
+        textArea.clear();
 
         Actions action = new Actions(driver);
 
@@ -40,7 +41,9 @@ public class ActionPage extends BasePage{
     public String verifyActionCopyPaste(String text){
 
         WebElement textArea1 = findElement(textArea1_Locator);
+        textArea1.clear();
         WebElement textArea2 = findElement(textArea2_Locator);
+        textArea2.clear();
 
         Actions action = new Actions(driver);
         //Se simula uso de SHIFT escriben mayus usando SHIFT

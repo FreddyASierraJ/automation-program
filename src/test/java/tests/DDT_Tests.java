@@ -1,15 +1,17 @@
 package tests;
 
+import listeners.ExtentReportExtension;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
-
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalUnit;
 import java.util.stream.Stream;
 
+@ExtendWith(ExtentReportExtension.class)
 public class DDT_Tests {
     @ParameterizedTest
     @ValueSource(ints = { 1, 2, 3 })

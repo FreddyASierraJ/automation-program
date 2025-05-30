@@ -1,27 +1,27 @@
 package tests;
 
 import dataclasses.Student;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import listeners.ExtentReportExtension;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.CoursePage;
 import pages.HomePage;
 
+@ExtendWith(ExtentReportExtension.class)
 public class Course_Test extends BaseTest{
 
     private static final Logger logger = LoggerFactory.getLogger(Course_Test.class);
     private final String studentCSVFile ="/files/students.csv";
 
-    HomePage homePage;
-    CoursePage coursePage;
+    static HomePage homePage;
+    static CoursePage coursePage;
 
-    @BeforeEach
-    void initPageObject() {
+    @BeforeAll
+    static void initPageObject() {
         homePage = new HomePage();
         coursePage = new CoursePage();
 

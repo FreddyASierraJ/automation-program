@@ -1,8 +1,8 @@
 package tests;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import listeners.ExtentReportExtension;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.slf4j.Logger;
@@ -10,15 +10,17 @@ import org.slf4j.LoggerFactory;
 import pages.HomePage;
 import pages.QSCreditCardsPage;
 
+@ExtendWith(ExtentReportExtension.class)
+@Tag("CreditCards_Regression")
 public class QSCreditCardTest extends BaseTest {
 
     private static final Logger logger = LoggerFactory.getLogger(QSCreditCardTest.class);
 
-    HomePage homePage;
-    QSCreditCardsPage creditCardsPage;
+    static HomePage homePage;
+    static QSCreditCardsPage creditCardsPage;
 
-    @BeforeEach
-    void initPageObject() {
+    @BeforeAll
+    static void initPageObject() {
         homePage = new HomePage();
         creditCardsPage = new QSCreditCardsPage();
 
