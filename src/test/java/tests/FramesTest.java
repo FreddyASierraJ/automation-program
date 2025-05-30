@@ -1,26 +1,28 @@
 package tests;
 
+import listeners.ExtentReportExtension;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.ActionPage;
 import pages.HomePage;
 import pages.WebElementsTestPage;
-
 import java.time.Duration;
 
+@ExtendWith(ExtentReportExtension.class)
 public class FramesTest extends BaseTest{
 
-    HomePage homePage;
+    static HomePage homePage;
 
-    WebElementsTestPage webElementsTestPage;
+    static WebElementsTestPage webElementsTestPage;
 
-    @BeforeEach
-    void init() {
+    @BeforeAll
+    static void init() {
         homePage = new HomePage();
         webElementsTestPage = new WebElementsTestPage();
         homePage.clickOnWebElementTestLink();

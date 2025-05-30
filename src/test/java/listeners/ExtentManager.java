@@ -49,6 +49,18 @@ public class ExtentManager {
         }
         return reportDir;
     }
+    public static String getReportPathWithClassName(String className){
+        String baseDir = System.getProperty("user.dir");
+        String reportDir = baseDir + "/reports";
+
+        File directory= new File(reportDir);
+
+        if(!directory.exists()){
+            directory.mkdir();
+        }
+        return reportDir + "/"+className + "_" + new Date().getTime()+".html";
+
+    }
 
     public static String screenShotName;
 
@@ -78,4 +90,19 @@ public class ExtentManager {
             }
         }
     }
-}
+    private static boolean alreadyCleared= false;
+    public static void clearReportsFolderOnce(){
+        if(!alreadyCleared){
+            File folder = new File(System.getProperty("user.dir")+"\\reports\\");
+            if(folder.exists() && folder.isDirectory()){
+                for(File file : folder.listFiles()){
+                    file.delete();
+                    }
+                }
+            alreadyCleared=true;
+            }
+
+        }
+
+    }
+

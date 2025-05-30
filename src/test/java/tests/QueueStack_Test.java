@@ -1,12 +1,13 @@
 package tests;
 
+import listeners.ExtentReportExtension;
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.extension.ExtendWith;
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
 
+@ExtendWith(ExtentReportExtension.class)
 public class QueueStack_Test {
 
     @Test
